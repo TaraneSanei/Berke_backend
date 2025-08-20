@@ -4,6 +4,8 @@ from django.db import models
 
 class Tag(models.Model):
     title = models.CharField(max_length=64)
+    updated_at = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         return self.title
@@ -12,6 +14,7 @@ class Tag(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=64)
     tags = models.ManyToManyField(Tag)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -22,7 +25,8 @@ class Track(models.Model):
     day_number = models.PositiveIntegerField()
     title = models.CharField(max_length=255)
     audio_url = models.URLField()
-    duration = models.DurationField(null=True, blank=True)
+    duration = models.PositiveIntegerField()
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title

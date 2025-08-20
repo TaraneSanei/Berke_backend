@@ -22,7 +22,8 @@ class UserSerializer(serializers.ModelSerializer):
             'minutesListened',
             'isSubscribed',
             'subscribedAt',
-            'subscriptionEnd'
+            'subscriptionEnd',
+            'preferences'
         ]
     def create(self, validated_data):
         user = User.objects.create_user(
