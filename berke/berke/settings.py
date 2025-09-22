@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'meditation',
+    'meditationsessions',
+    'journal'
 ]
 
 MIDDLEWARE = [

@@ -45,6 +45,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     subscription_end = models.DateField(blank=True, null=True)
     minutes_listened =models.IntegerField(default=0)
     preferences = models.ManyToManyField(Tag)
+    notification = models.TimeField(null=True, blank=True)
+    theme = models.CharField(max_length=100, default='sunrise')
     objects = CustomUserManager()
     USERNAME_FIELD = "phone_number"
 
