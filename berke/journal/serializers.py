@@ -23,11 +23,4 @@ class JournalSerializer(serializers.ModelSerializer):
         return journalnote
 
     def update(self, instance, validated_data):
-        instance.note = validated_data.get('Note', instance.Note)
-        instance.dateTime = validated_data.get('DateTime', instance.DateTime)
-        Emotional_status_data = validated_data.pop('EmotionalStatus')
-        for emotion_data in Emotional_status_data:
-            e = Emotion.objects.get(**emotion_data)
-            instance.EmotionalStatus.add(e)
-        instance.save()
-        return instance
+        pass

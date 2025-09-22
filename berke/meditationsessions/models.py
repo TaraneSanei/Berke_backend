@@ -12,5 +12,5 @@ class meditation_session(models.Model):
     track = models.ForeignKey(Track, on_delete=models.DO_NOTHING, related_name='sessions')
     duration = models.IntegerField(default=0)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='meditation_sessions')
-    startingEmotion = models.ForeignKey(Emotion, on_delete=models.DO_NOTHING, related_name='initial_emotion')
-    endingingEmotion = models.ForeignKey(Emotion, on_delete=models.DO_NOTHING, related_name='final_emotion')
+    initial_emotion = models.ForeignKey(Emotion, on_delete=models.DO_NOTHING, related_name='initial_emotion')
+    final_emotion = models.ForeignKey(Emotion, on_delete=models.DO_NOTHING, related_name='final_emotion')

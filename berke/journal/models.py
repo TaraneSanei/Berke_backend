@@ -17,4 +17,4 @@ class Journal(models.Model):
 class Emotion(models.Model):
     emotion = models.CharField(max_length=32)
     def __str__(self):
-        return (self.Emotion)
+        return (self.emotion)
